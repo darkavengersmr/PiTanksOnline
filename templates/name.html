@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>    
+    <style>
+      body {
+    background: url({{ url_for('video') }}) no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+   }
+
+      #centerLayer {
+    position: absolute;	/* Абсолютное позиционирование */
+    width: 180px; /* Ширина слоя в пикселах */
+    height: 100px; /* Высота слоя в пикселах */
+    left: 58%; /* Положение слоя от левого края */
+    top: 60%; /* Положение слоя от верхнего края */
+    margin-left: -211px; /* Отступ слева, включает padding и border */
+    margin-top: -150px;	/* Отступ сверху */
+    background: #000000; /* Цвет фона */
+    border: solid 0px black; /* Параметры рамки вокруг */
+    padding: 10px; /* Поля вокруг текста */
+    overflow: auto; /* Добавление полосы прокрутки */ 
+   }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+	$(document).ready(function() {
+	    addEventListener("keydown", function(event) {
+            if (event.keyCode == 13) {
+            	sendbutton.click();
+            }
+        });
+	</script>
+    <div id="centerLayer">
+    <form action="/get_name.php">
+     <p><input name="login" placeholder="Enter your name" autofocus></p>
+     <p><input type="submit" id="sendbutton"></p>
+    </form>
+    </div>
+    <h4><a href="simple_bot1.py" style="text-indent:10px">Скачать пример бота(вариант первый)</a></h4>
+    <h4><a href="simple_bot2.py" style="text-indent:10px">Скачать пример бота(вариант второй)</a></h4>
+  </body>
+</html>
+
